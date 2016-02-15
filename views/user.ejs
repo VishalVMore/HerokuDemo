@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%=title%></title>
+       
+        <script type="text/javascript" src="/../js/jquery-1.10.2.min.js"></script>
+       
+        <link rel="stylesheet" href="/../css/style.css">
+    </head>
+<body>
+<div class="data-table">
+    <table border="1" cellpadding="7" cellspacing="7">
+        <tr>
+            <th width="50px">No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+         <!--   <th>Action</th>-->
+        </tr>
+                       
+        <% if(data.length){ 
+                        
+         for(var i = 0;i < data.length;i++) { %>
+         
+        <tr>
+            <td><%=(i+1)%></td>
+            <td><%=data[0][i].name%></td>
+            <td><%=data[0][i].email%></td>
+            <td><%=data[0][i].password%></td>
+            <!--<td>
+                <a class="a-inside edit" href="/api/user/<%=data[i].user_id%>">Edit</a>
+               
+                <a class="a-inside delete" href="javascript:void(0)" onClick="deleteUser(<%=data[i].user_id%>)">Delete</a>
+               
+            </td>-->
+        </tr>
+    <% }
+    
+     }else{ %>
+         <tr>
+            <td colspan="5">No Data</td>
+         </tr>
+    <% } %>
+                                      
+    </table>
+</div>
+    </body>
+</html>
